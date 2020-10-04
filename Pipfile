@@ -15,6 +15,7 @@ whitenoise = "*"
 django-allauth = "==0.42"
 django-extensions = "*"
 dj-database-url = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.8"
