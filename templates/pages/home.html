@@ -1,1 +1,40 @@
-<h1>Home</h1>
+{% extends "layouts/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+<!-- Specific Page CSS goes here -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<!-- Hero -->
+<section class="section section bg-primary pb-11 pb-lg-12 text-white overflow-hidden z-2">
+    <div class="container z-2">
+        <div class="row justify-content-center text-center pt-6 pb-3" role="banner">
+            <div class="col-12 col-md-8">
+                <h1 class="display-1 font-weight-light mb-3">Pixel<span
+                        class="pixel-pro-badge font-weight-bolder text-primary">SURVEY</span></h1>
+                <p class="lead px-xl-6 mb-5"><span class="font-weight-bold">Open source kit</span>
+                    developed using awesome Django!</p>
+                <div class="d-flex flex-column flex-wrap flex-md-row mb-5 justify-content-center align-items-center">
+                    <a href="" class="btn btn-tertiary mb-3 mt-2 mr-2 mr-md-3 animate-up-2">
+                        Create Survey</a>
+                </div>
+                <a href="https://themesberg.com" target="_blank" class="d-flex justify-content-center flex-column mb-6">
+                    <img src="/static/assets/img/themesberg.svg" height="25" class="mb-3" alt="Themesberg Logo">
+                    <span class="text-muted font-small"> &copy; Themesberg - coded by AppSeed.</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="position-absolute bottom-0 left-0 w-100 d-none d-md-block mb-n2">
+        <svg class="fill-white" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 43.4"
+            style="enable-background:new 0 0 1920 43.4;" xml:space="preserve">
+            <path
+                d="M0,23.3c0,0,405.1-43.5,697.6,0c316.5,1.5,108.9-2.6,480.4-14.1c0,0,139-12.2,458.7,14.3 c0,0,67.8,19.2,283.3-22.7v35.1H0V23.3z">
+            </path>
+        </svg>
+    </div>
+</section>
+
+{% endblock content %}
