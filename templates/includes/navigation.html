@@ -32,12 +32,10 @@
                             <span class="fas fa-angle-down nav-link-arrow ml-2"></span>
                         </a>
                         <ul class="dropdown-menu" id="pages_submenu">
-                            <li><a class="dropdown-item" href="/about-company.html">About</a></li>
-                            <li><a class="dropdown-item" href="/contact.html">Contact</a></li>
-                            <li><a class="dropdown-item" href="/pricing.html">Pricing</a></li>
-                            <li><a class="dropdown-item" href="/services.html">Services</a></li>
-                            <li><a class="dropdown-item" href="/sign-in.html">Sign in</a></li>
-                            <li><a class="dropdown-item" href="/sign-up.html">Sign up</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pages:about' %}">About</a></li>
+                            <li><a class="dropdown-item" href="{% url 'pages:contact' %}">Contact</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Sign in</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Sign up</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown mega-dropdown">
