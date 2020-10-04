@@ -1,0 +1,75 @@
+{% extends "layouts/base-fullscreen.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load i18n %}
+{% load account %}
+{% block title %} Confirm email {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<!-- Section -->
+<section class="min-vh-100 d-flex align-items-center bg-soft">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="card card-authentication1 mx-auto my-5">
+                    <div class="card-body">
+                        <div class="card-content p-2">
+                            <div class="text-center text-md-center mb-4 mt-md-0">
+                                <h1 class="mb-0 h3">
+                                    <a target="_blank" href="{% url 'pages:home' %}">Pixel Survey</a> - Login
+                                </h1>
+                                <br />
+                            </div>
+                            {% if confirmation %}
+                            {% user_display confirmation.email_address.user as user_display %}
+
+                            <p>{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a
+                                    href="mailto:{{ email }}">{{ email }}</a> is an e-mail address for user
+                                {{ user_display }}.{% endblocktrans %}
+                            </p>
+                            <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                                {% csrf_token %}
+                                <button class="btn btn-primary btn-block" type="submit">{% trans 'Confirm' %}</button>
+                            </form>
+                            {% else %}
+                            {% url 'account_email' as email_url %}
+                            <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a
+                                    href="{{ email_url }}">issue a new
+                                    e-mail confirmation request</a>.
+                                {% endblocktrans %}</p>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer text-center py-3">
+                            <p class="text-warning mb-0">Do not have an account? <a href="{% url 'account_signup' %}">
+                                    Sign
+                                    Up
+                                    here</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <br />
+        </div>
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <br />
+            <span class="text-muted font-small">
+                &copy; <a href="{% url 'pages:home' %}">Pixel Survey</a>
+            </span>
+        </div>
+    </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
