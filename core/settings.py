@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'allauth.socialaccount.providers.facebook',
     'django_extensions',
+    'crispy_forms',
 
     # Local
     'users.apps.UsersConfig',
@@ -75,6 +76,7 @@ AUTHENTICATION_BACKENDS = (
 
 ROOT_URLCONF = 'core.urls'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # django-allauth config
 SITE_ID = 1
