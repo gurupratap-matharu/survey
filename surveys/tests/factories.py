@@ -1,5 +1,6 @@
 import factory
 from surveys.models import Survey
+from users.tests.factories import UserFactory
 
 
 class SurveyFactory(factory.django.DjangoModelFactory):
@@ -7,3 +8,4 @@ class SurveyFactory(factory.django.DjangoModelFactory):
         model = Survey
     title = factory.Faker('catch_phrase')
     description = factory.Faker('text')
+    author = factory.SubFactory(UserFactory)
