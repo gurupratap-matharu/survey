@@ -27,4 +27,5 @@ urlpatterns = [
 
     # local apps
     path('', include('pages.urls')),
+    path('surveys/', include('surveys.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
