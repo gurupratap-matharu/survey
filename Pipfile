@@ -16,6 +16,7 @@ django-allauth = "==0.42"
 django-extensions = "*"
 dj-database-url = "*"
 django-crispy-forms = "*"
+factory-boy = "*"
 
 [requires]
 python_version = "3.8"
