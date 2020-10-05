@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Surveys {% endblock %}
+{% block title %} Services {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -24,28 +24,26 @@
         </div>
     </div>
 </div>
-
 <!-- End of Hero section -->
+
 <section class="section section-md pt-0">
     <div class="container">
         <div class="col-12 col-lg-12">
             <div class="row justify-content-center mt-n7 z-2">
                 <div class="col-12 col-md-6">
                     <div class="row mt-5 mt-lg-0 mr-md-1">
-
-                        {% for survey in survey_list %}
                         <!-- Icon Boxes -->
                         <div class="card border-light">
                             <div class="card-body p-5">
-                                <img src="/static/assets/img/pages/design.svg" alt="survey-image" class="image-md mb-4">
-                                <h2 class="h4 mb-2">{{ survey.title }}</h2>
-                                <p>{{ survey.description }}</p>
-                                <a href="#" class="btn btn-sm btn-primary">See more</a>
+                                <img src="/static/assets/img/pages/design.svg" alt="Web design illustration"
+                                    class="image-md mb-4">
+                                <h2 class="h4 mb-2">Professional Design</h2>
+                                <p>We are trying to build our work to create a design which will complete and satisfy
+                                    the necessities of our client and users of the product.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Learn more</a>
                             </div>
                         </div>
                         <!-- End of Icon Boxes -->
-
-                        {% endfor %}
                         <!-- Icon Boxes -->
                         <div class="card border-light mt-3">
                             <div class="card-body p-5">
@@ -116,8 +114,8 @@
         </div>
     </div>
 </div>
-
 <!-- Section -->
+
 <div class="section section-sm py-0 mt-5 mt-md-n5 d-none d-sm-block">
     <!-- Clients -->
     <div class="container top-0 right-o left-0 z-2">
