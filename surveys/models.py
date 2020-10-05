@@ -16,6 +16,9 @@ class Survey(models.Model):
 
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='surveys')
 
+    class Meta:
+        ordering = ['-created_on']
+
     def __str__(self):
         return self.title
 
