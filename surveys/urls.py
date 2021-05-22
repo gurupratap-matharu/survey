@@ -3,6 +3,16 @@ from django.urls import path
 from surveys.views import (SurveyCreate, SurveyDelete, SurveyDetail,
                            SurveyList, SurveyUpdate)
 
+"""
+Rest Endpoints for surveys app
+
+POST /surveys -> create a survey
+GET /surveys/:id -> Retrieve a survey
+POST /surveys/:id -> Update a survey (optional)
+POST /surveys/:id/submit -> Submit a survey
+POST /surveys/:id/delete -> Delete a survey
+GET /surveys -> List all surveys
+"""
 urlpatterns = [
     path('', SurveyList.as_view(), name='survey_list'),
     path('create/', SurveyCreate.as_view(), name='survey_create'),
