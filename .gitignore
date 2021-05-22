@@ -1,6 +1,9 @@
 # Macos
 .DS_Store
 
+# Vim
+*.swp
+
 # Django 
 *.log
 *.pot
