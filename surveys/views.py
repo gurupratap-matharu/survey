@@ -1,3 +1,5 @@
+import logging
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
@@ -5,6 +7,9 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from surveys.forms import SurveyForm
 from surveys.models import Survey
+
+logger = logging.getLogger(__name__)
+print('Veer logger: {}'.format(logger))
 
 
 class SurveyList(ListView):
@@ -22,6 +27,10 @@ class SurveyCreate(LoginRequiredMixin, CreateView):
     form_class = SurveyForm
     template_name = 'surveys/survey_form.html'
     success_message = '%(title)s created successfully!'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class SurveyUpdate(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
