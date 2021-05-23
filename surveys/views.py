@@ -18,6 +18,7 @@ class SurveyDetail(DetailView):
 
 class SurveyCreate(LoginRequiredMixin, CreateView):
     model = Survey
+    fields = ('title', 'description',)
     template_name = 'surveys/survey_form.html'
     success_message = '%(title)s created successfully!'
 
