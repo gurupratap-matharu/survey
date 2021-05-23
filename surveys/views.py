@@ -3,6 +3,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
+from surveys.forms import SurveyForm
 from surveys.models import Survey
 
 
@@ -18,7 +19,7 @@ class SurveyDetail(DetailView):
 
 class SurveyCreate(LoginRequiredMixin, CreateView):
     model = Survey
-    fields = ('title', 'description',)
+    form_class = SurveyForm
     template_name = 'surveys/survey_form.html'
     success_message = '%(title)s created successfully!'
 
