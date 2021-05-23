@@ -10,6 +10,11 @@ from surveys.models import Survey
 
 logger = logging.getLogger(__name__)
 print('Veer logger: {}'.format(logger))
+logger.debug('Veer I am debug')
+logger.info('Veer I am info')
+logger.warning('Veer I am warning')
+logger.error('Veer I am error')
+logger.critical('Veer I am critical')
 
 
 class SurveyList(ListView):
