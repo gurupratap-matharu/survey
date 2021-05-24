@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pylint = "*"
 autopep8 = "*"
+ipython = "*"
 
 [packages]
 asgiref = "==3.3.4"
