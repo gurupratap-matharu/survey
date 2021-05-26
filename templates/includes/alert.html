@@ -1,10 +1,18 @@
+<!-- Start Alert -->
+{% if messages %}
+
 <div class="container" style="margin-top: 100px;">
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+    {% for message in messages %}
+    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} alert-dismissible fade show"
+        role="alert">
         <span class="alert-inner--icon"><i class="far fa-bell"></i></span>
-        <span class="alert-inner--text"><strong>Heads up!</strong> This alert needs your attention, but it's not super
-            important.</span>
+        <span class="alert-inner--text">{{ message }}</span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+    {% endfor %}
 </div>
+{% endif %}
+<!-- End Alert -->
