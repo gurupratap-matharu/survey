@@ -1,7 +1,7 @@
 from django.urls import path
 
 from surveys.views import (SurveyCreate, SurveyDelete, SurveyDetail,
-                           SurveyList, SurveyUpdate)
+                           SurveyList, SurveyRegister, SurveyUpdate)
 
 """
 Rest Endpoints for surveys app
@@ -19,4 +19,5 @@ urlpatterns = [
     path('<uuid:pk>/', SurveyDetail.as_view(), name='survey_detail'),
     path('<uuid:pk>/update/', SurveyUpdate.as_view(), name='survey_update'),
     path('<uuid:pk>/delete/', SurveyDelete.as_view(), name='survey_delete'),
+    path('register/', SurveyRegister.as_view(), name='survey_register'),
 ]
