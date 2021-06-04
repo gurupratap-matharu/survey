@@ -1,7 +1,4 @@
-.PHONY: migrations
-.PHONY: staticfiles
-	
-.PHONY: collectstatic run test ci 
+.PHONY: collectstatic run test ci migrations staticfiles 
 
 collectstatic:
 	docker compose exec web python manage.py collectstatic --noinput
