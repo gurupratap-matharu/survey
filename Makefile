@@ -1,4 +1,14 @@
+APP_LIST ?= core users pages surveys
+
 .PHONY: collectstatic run test ci migrations staticfiles 
+
+help:
+	@echo "available commands"
+	@echo " - run		: builds docker images and shows logs"
+	@echo " - ci		: lints, checks migrations, runs tests and shows coverage report"
+	@echo " - shell		: launches the django shell"
+	@echo " - isort		: sorts all imports of the project"
+	@echo " - lint		: lints the code"
 
 collectstatic:
 	docker compose exec web python manage.py collectstatic --noinput
@@ -38,10 +48,10 @@ migrations-check:
 	docker compose exec web python manage.py makemigrations --check --dry-run
 
 test: migrations-check
-	@docker compose exec web coverage run --source=. manage.py test -v 2
+	docker compose exec web coverage run --source=. manage.py test -v 2
 
-ci: test
-	@docker compose exec web coverage report
+ci: lint test
+	docker compose exec web coverage report
 
 isort:
 	isort .
@@ -49,6 +59,9 @@ isort:
 isort-check:
 	isort -c .
 
+lint: isort
+	docker compose exec web pylint $(APP_LIST)
+	
 makemigrations:
 	docker compose exec web python manage.py makemigrations
 
