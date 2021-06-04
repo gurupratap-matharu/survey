@@ -3,7 +3,7 @@ APP_LIST ?= core users pages surveys
 .PHONY: collectstatic run test ci migrations staticfiles 
 
 help:
-	@echo "available commands"
+	@echo "Available commands"
 	@echo " - run		: builds docker images and shows logs"
 	@echo " - ci		: lints, checks migrations, runs tests and shows coverage report"
 	@echo " - shell		: launches the django shell"
