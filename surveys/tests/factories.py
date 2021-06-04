@@ -1,4 +1,5 @@
 import factory
+
 from surveys.models import Survey
 from users.tests.factories import UserFactory
 

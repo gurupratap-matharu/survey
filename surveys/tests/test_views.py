@@ -2,6 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.messages import get_messages
 from django.test import TestCase
 from django.urls import resolve, reverse
+
 from surveys.forms import SurveyForm
 from surveys.models import Survey
 from surveys.views import SurveyCreate
